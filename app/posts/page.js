@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 async function fetchPosts() {
   const url = 'https://raw.githubusercontent.com/neodtruman/nextjs-blog/Chapter.10.4/public/posts.json';
-  const response = await fetch(url);
+  const response = await fetch(url, { next: { revalidate: 20 } });
 
   const data = await response.json();
   return data.posts;
