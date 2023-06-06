@@ -16,6 +16,11 @@ export default function Navigation() {
             </Link>
           </li>
           <li>
+            <Link href="/admin/create-post" className={styles['nav-link']}>
+              Create Post
+            </Link>
+          </li>
+          <li>
             <Link href="/login" className={styles['nav-link']}>
               Sign In
             </Link>
