@@ -2,7 +2,8 @@
   {
     "email": "admin@abc.com",
     "password": "$2a$12$fFbEzR.bp44qZ/WDwMX99e8WD5ILw6Qde6j4sGUjY5lhhRElL2muC",
-    "name": "Admin"
+    "name": "Admin",
+    "role": "admin"
   },
   {
     "email": "user@abc.com",
