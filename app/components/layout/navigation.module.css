@@ -1,0 +1,30 @@
+.header {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+}
+
+.header ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.header li {
+  margin: 0 1rem;
+}
+
+.nav-link {
+  font-weight: bold;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--theme-color-dark);
+}
+.nav-link:hover,
+.nav-link:active {
+  color: var(--theme-color-light);
+}

@@ -1,4 +1,7 @@
 body {
+  --theme-color-light: #e60023;
+  --theme-color-dark: #ad081b;
+
   padding: 20px;
   margin: 0;
 }
