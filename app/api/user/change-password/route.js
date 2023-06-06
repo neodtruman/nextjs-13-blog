@@ -11,15 +11,7 @@ export async function POST(request) {
 
   // Get email from JWT cookie
   const token = request.cookies.get('next-jwt')?.value;
-  if (!token) {
-    return NextResponse.json(
-      {
-        status: CONSTANTS.RESPONSE_STATUS.ERROR,
-        data: 'Not authenticated',
-      },
-      { status: 401 }
-    );
-  }
+  // The middleware will protect this API, ensuring a valid token exists
   const secret = new TextEncoder().encode(process.env.JWT_SECRET);
   const result = await jose.jwtVerify(token, secret);
   const email = result.payload.email;
