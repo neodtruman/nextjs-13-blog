@@ -1,0 +1,17 @@
+.btn-add-selector {
+  display: inline-flex;
+  border: 1px solid #ccc;
+  width: 202px;
+  height: 202px;
+  vertical-align: middle;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.btn-add-selector span {
+  margin: auto;
+}
+
+.btn-add-selector:hover {
+  border-color: #333;
+}

@@ -1,0 +1,60 @@
+.new-img-container {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  width: 202px;
+  height: 202px;
+  vertical-align: middle;
+  margin: 5px;
+}
+
+.btn-select-image {
+  width: 200px;
+  height: 200px;
+  border: 1px dashed #bababa;
+  cursor: pointer;
+  text-align: center;
+  line-height: 200px;
+}
+
+.btn-select-image:hover {
+  border-color: #333;
+}
+.new-img {
+  max-width: 200px;
+  max-height: 200px;
+  margin: auto;
+}
+
+.btn-copy-filename,
+.btn-delete-image {
+  position: absolute;
+  right: 0;
+  cursor: pointer;
+  background-color: var(--theme-color-dark);
+  color: white;
+  width: 24px;
+  text-align: center;
+}
+.btn-copy-filename:hover,
+.btn-delete-image:hover {
+  background-color: var(--theme-color-light);
+}
+.btn-delete-image {
+  top: 0;
+}
+.btn-copy-filename {
+  bottom: 28px;
+}
+
+.inp-image-file {
+  display: none;
+}
+
+.inp-copy {
+  position: absolute;
+  bottom: 0;
+  width: 175px;
+  height: 21px;
+}
