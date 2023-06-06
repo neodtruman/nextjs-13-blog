@@ -5,7 +5,7 @@ import styles from './post-detail.module.css';
 
 export const revalidate = 30;
 
-export async function generateMetadata({ params, searchParams }, parent) {
+export function generateMetadata({ params, searchParams }, parent) {
   // read route params
   const postId = params.id;
 
