@@ -1,32 +1,29 @@
-'use client';
+import Link from 'next/link';
 
-import { useEffect, useState } from 'react';
+async function fetchPosts() {
+  const url = 'https://raw.githubusercontent.com/neodtruman/nextjs-blog/Chapter.10.4/public/posts.json';
+  const response = await fetch(url);
 
-export default function AllPostsPage() {
-  const [posts, setPosts] = useState([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const data = await response.json();
+  return data.posts;
+}
 
-  useEffect(() => {
-    setIsLoading(true);
-    fetch('/posts.json')
-      .then((response) => response.json())
-      .then((data) => {
-        setPosts(data.posts);
-        setIsLoading(false);
-      });
-  }, []);
+export default async function AllPostsPage() {
+  const lastRenderedTime = new Date().toLocaleTimeString();
 
-  if (isLoading) {
-    return <p>Loading...</p>;
-  }
-
+  const posts = await fetchPosts();
   return (
     <>
       <h1>All Posts</h1>
+      <p>Last rendered time: {lastRenderedTime}</p>
+
       <ul>
-        {posts.map((post) => (
-          <li key={post.id}>{post.title}</li>
-        ))}
+        {posts &&
+          posts.map((post) => (
+            <li key={post.id}>
+              <Link href={`/posts/${post.id}`}>{post.title}</Link>
+            </li>
+          ))}
       </ul>
     </>
   );
