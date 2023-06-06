@@ -3,6 +3,11 @@ import PostsGrid from '../components/posts-grid';
 
 export const revalidate = 30;
 
+export const metadata = {
+  title: 'My Cool Blog - All Posts',
+  description: 'All Posts',
+};
+
 export default function AllPostsPage() {
   const posts = getAllPosts();
 

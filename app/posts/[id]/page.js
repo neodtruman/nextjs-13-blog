@@ -5,6 +5,21 @@ import styles from './post-detail.module.css';
 
 export const revalidate = 30;
 
+export async function generateMetadata({ params, searchParams }, parent) {
+  // read route params
+  const postId = params.id;
+
+  // fetch data
+  const postData = getPostData(postId);
+
+  return {
+    title: postData.title,
+    openGraph: {
+      images: [`/images/posts/${postData.slug}/${postData.image}`],
+    },
+  };
+}
+
 export default function PostDetailPage({ params }) {
   const { id: postId } = params;
 
